@@ -17,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('get/generos', [ApiController::class,'obtenerGeneros'])->name("obtener.generos");
+/*Route::get('get/generos', [ApiController::class,'obtenerGeneros'])->name("obtener.generos");
 
-Route::get('get/generos/{id}', [ApiController::class,'findGeneros'])->name("obtener.generos");
+Route::get('get/generos/{id}', [ApiController::class,'findGeneros'])->name("obtener.generos");*/
