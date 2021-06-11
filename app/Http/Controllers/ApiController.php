@@ -37,13 +37,13 @@ class ApiController extends Controller
             $objeto = json_decode($response);
             foreach ($objeto->data as $genero){
                 echo json_encode($genero);
-               $verificar = Genero::where('name',$genero->name)->first();
+              /* $verificar = Genero::where('name',$genero->name)->first();
                 if(!$verificar)
                     $nuevoGenero = new Genero();
 
                 $nuevoGenero->name = $genero->name;
                 $nuevoGenero->save(); 
-
+*/
 
                 if(isset($genero->picture))
                 echo "<img src='$genero->picture' alt=''>";
