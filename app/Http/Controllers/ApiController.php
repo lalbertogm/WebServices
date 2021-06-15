@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Genero;
 use App\Models\Artista;
 
+
 class ApiController extends Controller
 {
     public function obtenerGeneros(){
@@ -37,13 +38,13 @@ class ApiController extends Controller
             $objeto = json_decode($response);
             foreach ($objeto->data as $genero){
                 echo json_encode($genero);
-                $verificar = Genero::where('name',$genero->name)->first();
+              /* $verificar = Genero::where('name',$genero->name)->first();
                 if(!$verificar)
                     $nuevoGenero = new Genero();
 
                 $nuevoGenero->name = $genero->name;
-                $nuevoGenero->save();
-
+                $nuevoGenero->save(); 
+*/
 
                 if(isset($genero->picture))
                 echo "<img src='$genero->picture' alt=''>";
@@ -67,7 +68,6 @@ class ApiController extends Controller
 
         }
     }
-
     public function obtenerGenero($name){
 
      
@@ -97,6 +97,4 @@ class ApiController extends Controller
          echo $key, $consulta;
 
     }
-
-
 }
