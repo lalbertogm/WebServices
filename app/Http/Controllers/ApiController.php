@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Genero;
+use App\Models\Artista;
 
 class ApiController extends Controller
 {
@@ -66,4 +67,36 @@ class ApiController extends Controller
 
         }
     }
+
+    public function obtenerGenero($name){
+
+     
+        $consulta = Genero::select('*')->where('name', '=', $name)->get();
+
+        $nombre = Genero::select('name')->where('name','=',$name)->get();
+
+        foreach ($nombre as $key) {
+            $key->nombre;
+         }
+
+         echo $key, $consulta;
+
+    }
+
+    public function obtenerArtista($id){
+
+     
+        $consulta = Artista::select('*')->where('id', '=', $id)->get();
+
+        $nombre = Artista::select('id')->where('id','=',$id)->get();
+
+        foreach ($nombre as $key) {
+            $key->nombre;
+         }
+
+         echo $key, $consulta;
+
+    }
+
+
 }
